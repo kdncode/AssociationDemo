@@ -17,23 +17,29 @@ var userSchema = new mongoose.Schema({
 });
 var User = mongoose.model("User", userSchema);
 
-// // Create an user
-// var newUser = new User({
-//     email: "hello@gmail.com",
-//     name: "Hello Hi"
-// });
 
-// newUser.save( (err, user ) => {
-//     if( err ) { console.log(err)}
-//     else { console.log(user) }
+// Create an user
+var newUser = new User({
+    email: "boombayah@gmail.com",
+    name: "Bashadaka Haha"
+});
+
+newUser.posts.push({
+    title: "Studying CS is fun",
+    content: "Jk it's not fun at all"
+});
+
+newUser.save( (err, user ) => {
+    if( err ) { console.log(err)}
+    else { console.log(user) }
+})
+
+// var newPost = new Post({
+//     title: "New iphone x",
+//     content: "come out soon"
 // })
 
-var newPost = new Post({
-    title: "New iphone x",
-    content: "come out soon"
-})
-
-newPost.save( ( err, post ) => {
-    if(err) { console.log(err)}
-    else { console.log(post)}
-})
+// newPost.save( ( err, post ) => {
+//     if(err) { console.log(err)}
+//     else { console.log(post)}
+// })
