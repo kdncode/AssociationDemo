@@ -19,14 +19,23 @@ var postSchema = new mongoose.Schema({
 
 var Post = mongoose.model("Post", postSchema);
 
+// // Create an user
+// var newUser = new User({
+//     email: "hello@gmail.com",
+//     name: "Hello Hi"
+// });
 
-var newUser = new User({
-    email: "hello@gmail.com",
-    name: "Hello Hi"
+// newUser.save( (err, user ) => {
+//     if( err ) { console.log(err)}
+//     else { console.log(user) }
+// })
 
-});
+var newPost = new Post({
+    title: "New iphone x",
+    content: "come out soon"
+})
 
-newUser.save( (err, user ) => {
-    if( err ) { console.log(err)}
-    else { console.log(user) }
+newPost.save( ( err, post ) => {
+    if(err) { console.log(err)}
+    else { console.log(post)}
 })
