@@ -47,5 +47,15 @@ var User = mongoose.model("User", userSchema);
 // Retrieve an exsisting user
 User.findOne({ name: "Bashadaka Haha"}, (err, user ) => {
     if(err) { console.log(err)}
-    else {console.log(user)}
+    else {
+        user.posts.push({
+            title: "10 things I don't like about CS",
+            content: "blahhhhh"
+        })
+        user.save( ( err, user ) => {
+            if(err) { console.log(err) }
+            else { console.log(user) }
+
+        })
+    }
 })
