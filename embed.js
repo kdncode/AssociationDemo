@@ -18,21 +18,21 @@ var userSchema = new mongoose.Schema({
 var User = mongoose.model("User", userSchema);
 
 
-// Create an user
-var newUser = new User({
-    email: "boombayah@gmail.com",
-    name: "Bashadaka Haha"
-});
+// // Create an user
+// var newUser = new User({
+//     email: "boombayah@gmail.com",
+//     name: "Bashadaka Haha"
+// });
 
-newUser.posts.push({
-    title: "Studying CS is fun",
-    content: "Jk it's not fun at all"
-});
+// newUser.posts.push({
+//     title: "Studying CS is fun",
+//     content: "Jk it's not fun at all"
+// });
 
-newUser.save( (err, user ) => {
-    if( err ) { console.log(err)}
-    else { console.log(user) }
-})
+// newUser.save( (err, user ) => {
+//     if( err ) { console.log(err)}
+//     else { console.log(user) }
+// })
 
 // var newPost = new Post({
 //     title: "New iphone x",
@@ -43,3 +43,9 @@ newUser.save( (err, user ) => {
 //     if(err) { console.log(err)}
 //     else { console.log(post)}
 // })
+
+// Retrieve an exsisting user
+User.findOne({ name: "Bashadaka Haha"}, (err, user ) => {
+    if(err) { console.log(err)}
+    else {console.log(user)}
+})
