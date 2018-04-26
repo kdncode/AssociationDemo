@@ -55,7 +55,6 @@ User.findOne({ name: "Bashadaka Haha"}, (err, user ) => {
         user.save( ( err, user ) => {
             if(err) { console.log(err) }
             else { console.log(user) }
-
         })
     }
 })
