@@ -18,3 +18,15 @@ var postSchema = new mongoose.Schema({
 })
 
 var Post = mongoose.model("Post", postSchema);
+
+
+var newUser = new User({
+    email: "hello@gmail.com",
+    name: "Hello Hi"
+
+});
+
+newUser.save( (err, user ) => {
+    if( err ) { console.log(err)}
+    else { console.log(user) }
+})
