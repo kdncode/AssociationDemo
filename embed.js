@@ -17,7 +17,6 @@ var userSchema = new mongoose.Schema({
 });
 var User = mongoose.model("User", userSchema);
 
-
 // // Create an user
 // var newUser = new User({
 //     email: "boombayah@gmail.com",
